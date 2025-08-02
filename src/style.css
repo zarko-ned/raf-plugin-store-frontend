@@ -47,7 +47,9 @@ button.plugin-button:hover {
     transform: translate(3px, 3px);
     color: white;
 }
-
+.plugin-button-link {
+    text-decoration: none;
+}
 /* --------- */
 /*  Preloader */
 /* --------- */
@@ -548,7 +550,7 @@ button.plugin-button:hover {
 }
 
 /* --------- */
-/* About */
+/* StudentPlugin */
 /* --------- */
 
 .about-section {
