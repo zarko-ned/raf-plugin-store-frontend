@@ -554,7 +554,7 @@ button.plugin-button:hover {
 
 .about-section {
     position: relative !important;
-    padding-top: 150px !important;
+    padding-top: 60px !important;
     padding-bottom: 30px !important;
     background-image: var(--section-background-color) !important;
     color: white !important;
@@ -771,7 +771,17 @@ button.plugin-button:hover {
     margin-bottom: 20px;
 }
 
-.store-link a {
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     font-weight: bold;
     background-color: #fff;
@@ -781,14 +791,37 @@ button.plugin-button:hover {
     border-radius: 4px;
     box-shadow: 3px 3px 0 #000;
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
 }
 
-.store-link a:hover {
+.action-button:hover {
     background-color: #934cce;
     color: #fff;
     transform: translate(2px, 2px);
     box-shadow: 1px 1px 0 #000;
 }
+
+.emoji {
+    font-size: 18px;
+}
+
+/* Responsivnost */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+
 
 .plugin-description {
     font-size: 14px;

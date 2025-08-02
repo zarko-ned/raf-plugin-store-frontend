@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "../../axiosInstance.js";
 import Card from "react-bootstrap/Card";
+import {FaGithub} from 'react-icons/fa'
 
 
 function StudentPluginCard() {
@@ -33,12 +34,34 @@ function StudentPluginCard() {
 
     return (
         <div className="plugin-container">
+
             <div className="plugin-header">
-                <h2 className="store-link">
-                    <a href="/store">⭢ Idi na Store</a>
-                </h2>
+                <div className="button-container " style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+                    {/* Dugme za kopiranje linka */}
+                    <button
+                        className="action-button"
+                        onClick={() => {
+                            navigator.clipboard.writeText('https://rafplugins.store/teacherplugin/update');
+                            alert('Link kopiran!');
+                        }}
+                    >
+                        <span className="emoji">📋</span> Kopiraj Plugin Repository link
+                    </button>
+
+                    {/* Dugme za GitHub - CORRECTED: using FaGithub instead of GitHubIcon */}
+                    <a
+                        className="action-button github-button"
+                        href="https://github.com/RAFSoftLab/raf-teacher-plugin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="emoji"><FaGithub/></span> GitHub Repo
+                    </a>
+                </div>
+
+
                 <p className="plugin-description">
-                    <strong>Studentski plugin store</strong> je u fazi razvoja.<br />
+                    <strong>Studentski plugin store</strong> je u fazi razvoja.<br/>
                     Ovde možete pronaći najnovije verzije dostupnih pluginova.
                 </p>
             </div>
@@ -48,6 +71,7 @@ function StudentPluginCard() {
                 <tr>
                     <th>Naziv</th>
                     <th>Verzija</th>
+                    <th>Opis</th>
                     <th>Datum izdanja</th>
                     <th>Preuzmi</th>
                 </tr>
@@ -57,6 +81,7 @@ function StudentPluginCard() {
                     <tr key={plugin.plugin_release_id}>
                         <td>{plugin.name}</td>
                         <td>{plugin.version}</td>
+                        <td>{plugin.description}</td>
                         <td>
                             {new Intl.DateTimeFormat('sr-RS', {
                                 day: '2-digit',
@@ -65,10 +90,9 @@ function StudentPluginCard() {
                             }).format(new Date(plugin.build_date))}
                         </td>
 
-                        <td>
+                        <td style={{width: "150px", whiteSpace: "nowrap"}}>
                             <a
                                 href={`http://157.180.37.247/build/distributions/${plugin.name}.zip`}
-
                                 rel="noopener noreferrer"
                             >
                                 📥 Download
