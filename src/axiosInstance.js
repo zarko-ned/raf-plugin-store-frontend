@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Axios default config
 const config = {
-    baseURL: 'https://rafplugins.store/', // Osnova URL-a na nasem backendu
+    baseURL: 'https://rafplugins.store/api/v1', // Osnova URL-a na nasem backendu
     timeout: 60000, // Timeout (opciono) koliko maksimalno cekamo odgovor
     headers: {
         'Content-Type': 'application/json', // Podrazumevani Content-Type

@@ -53,7 +53,7 @@ function Home() {
 
                             <div style={{display: "flex", flexWrap: "wrap"}}>
 
-                                <PluginButton  name={"Nastavnički plugin"} to="#"/>
+                                <PluginButton  name={"Nastavnički plugin"} to="teacherplugin"/>
                                 <PluginButton  name={"Studentski plugin"} to="/studentplugin"/>
 
                             </div>

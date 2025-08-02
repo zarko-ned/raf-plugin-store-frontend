@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 
 
-import StudentPluginCard from "./StudentPluginCard";
+import TeacherPluginCard from "./TeacherPluginCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 
@@ -22,9 +22,9 @@ function StudentPlugin() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-             Studentski plugin store je trenutno u izradi
+             Nastavnički plugin
             </h1>
-            <StudentPluginCard />
+            <TeacherPluginCard />
           </Col>
           <Col
             md={5}
