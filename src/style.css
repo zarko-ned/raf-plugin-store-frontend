@@ -330,7 +330,7 @@ button.plugin-button:hover {
 .home-about-section {
   position: relative;
   padding-bottom: 70px !important;
-  padding-top: 70px !important;
+
 }
 
 .home-about-description {
@@ -757,7 +757,6 @@ button.plugin-button:hover {
     font-family: 'Courier New', monospace;
     padding: 20px;
 
-    max-width: 900px;
     margin: auto;
 
     backdrop-filter: blur(3px);

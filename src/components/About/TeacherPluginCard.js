@@ -48,6 +48,7 @@ function StudentPluginCard() {
                 <tr>
                     <th>Naziv</th>
                     <th>Verzija</th>
+                    <th>Datum izdanja</th>
                     <th>Preuzmi</th>
                 </tr>
                 </thead>
@@ -57,9 +58,17 @@ function StudentPluginCard() {
                         <td>{plugin.name}</td>
                         <td>{plugin.version}</td>
                         <td>
+                            {new Intl.DateTimeFormat('sr-RS', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric'
+                            }).format(new Date(plugin.build_date))}
+                        </td>
+
+                        <td>
                             <a
-                                href={`http://157.180.37.247/build/distributions/${plugin.name}`}
-                                target="_blank"
+                                href={`http://157.180.37.247/build/distributions/${plugin.name}.zip`}
+
                                 rel="noopener noreferrer"
                             >
                                 📥 Download
