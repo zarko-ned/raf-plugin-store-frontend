@@ -67,6 +67,9 @@ function StudentPlugin() {
                         style={{paddingTop: "50px", paddingBottom: "50px"}}
                         className="about-img"
                     >
+                        <h1 className="project-author">
+                            Autor: <strong className="author-name">{author}</strong>
+                        </h1>
                         <p className="plugin-description" style={{cursor: isLong ? 'pointer' : 'default'}}>
                             {visibleText}
                             {isLong && (

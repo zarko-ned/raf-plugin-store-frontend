@@ -886,3 +886,16 @@ button.plugin-button:hover {
     transform: translate(2px, 2px);
     box-shadow: 1px 1px 0 #000;
 }
+
+.project-author {
+    font-size: 18px; /* manja veličina */
+    font-weight: 500;
+    color: #ccc;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.author-name {
+    color: #a57cff; /* ljubičasta nijansa, zameni po potrebi */
+    font-weight: bold;
+}
