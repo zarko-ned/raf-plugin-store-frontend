@@ -50,6 +50,9 @@ function StudentPlugin() {
             <Particle/>
             <Container>
                 <Row style={{justifyContent: "center", padding: "10px"}}>
+                    <h1 style={{fontSize: "2.1em", paddingBottom: "20px", paddingTop: "20px"}}>
+                        Nastavnički plugin
+                    </h1>
                     <Col
                         md={7}
                         style={{
@@ -57,9 +60,7 @@ function StudentPlugin() {
 
                         }}
                     >
-                        <h1 style={{fontSize: "2.1em", paddingBottom: "20px"}}>
-                            Nastavnički plugin
-                        </h1>
+
                         <TeacherPluginCard/>
                     </Col>
                     <Col

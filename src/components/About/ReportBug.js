@@ -40,7 +40,7 @@ function ReportBug() {
                         md={12}
                         style={{
                             justifyContent: "center",
-                            paddingTop: "30px",
+                            paddingTop: "20px",
                             paddingBottom: "50px",
                         }}
                     >

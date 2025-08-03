@@ -73,7 +73,7 @@ function NavBar() {
             </NavDropdown>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={Link} to="/how-to-install" onClick={() => updateExpanded(false)}>
                 <AiOutlineQuestionCircle style={{ marginBottom: "2px" }} /> Kako instalirati
               </Nav.Link>
             </Nav.Item>
