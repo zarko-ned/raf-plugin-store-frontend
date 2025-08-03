@@ -11,10 +11,11 @@ import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineUser,
+  AiOutlineUser, AiFillProject,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+import {NavDropdown} from "react-bootstrap";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -61,32 +62,16 @@ function NavBar() {
 
 
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
+            <NavDropdown title={<><AiFillProject style={{ marginBottom: "2px" }} /> Plugini</>} id="plugins-nav-dropdown">
 
+            <NavDropdown.Item as={Link} to="/teacherplugin" onClick={() => updateExpanded(false)}>
+                Nastavnički plugin
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/studentplugin" onClick={() => updateExpanded(false)}>
+                Studentski plugin
+              </NavDropdown.Item>
+            </NavDropdown>
 
-
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
