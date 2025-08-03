@@ -77,17 +77,16 @@ function StudentPluginCard() {
                 <tbody>
                 {plugins.map((plugin) => (
                     <tr key={plugin.plugin_release_id}>
-                        <td>{plugin.version}</td>
-                        <td>{plugin.description}</td>
-                        <td>
+                        <td data-label="Verzija">{plugin.version}</td>
+                        <td data-label="Opis">{plugin.description}</td>
+                        <td data-label="Datum izdanja">
                             {new Intl.DateTimeFormat('sr-RS', {
                                 day: '2-digit',
                                 month: '2-digit',
                                 year: 'numeric'
                             }).format(new Date(plugin.build_date))}
                         </td>
-
-                        <td style={{width: "150px", whiteSpace: "nowrap"}}>
+                        <td data-label="Preuzmi" style={{width: "150px", whiteSpace: "nowrap"}}>
                             <a
                                 href={`http://157.180.37.247/build/distributions/${plugin.name}.zip`}
                                 rel="noopener noreferrer"
