@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "../../axiosInstance.js";
 import Card from "react-bootstrap/Card";
-import {FaGithub} from 'react-icons/fa'
+import {FaGithub, FaCopy} from 'react-icons/fa'
 
 
 function StudentPluginCard() {
@@ -47,7 +47,7 @@ function StudentPluginCard() {
                             alert('Link kopiran!');
                         }}
                     >
-                        <span className="emoji">📋</span> Kopiraj Plugin Repository link
+                        <span className="emoji"><FaCopy/></span> Kopiraj Plugin Repository link
                     </button>
 
                     {/* Dugme za GitHub - CORRECTED: using FaGithub instead of GitHubIcon */}
@@ -67,7 +67,7 @@ function StudentPluginCard() {
             <table className="retro-table">
                 <thead>
                 <tr>
-                    <th>Naziv</th>
+
                     <th>Verzija</th>
                     <th>Opis</th>
                     <th>Datum izdanja</th>
@@ -77,7 +77,6 @@ function StudentPluginCard() {
                 <tbody>
                 {plugins.map((plugin) => (
                     <tr key={plugin.plugin_release_id}>
-                        <td>{plugin.name}</td>
                         <td>{plugin.version}</td>
                         <td>{plugin.description}</td>
                         <td>
