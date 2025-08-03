@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Container, Row, Col} from "react-bootstrap";
 import Particle from "../Particle";
+import axios from "../../axiosInstance";
 
 
 import TeacherPluginCard from "./TeacherPluginCard";
@@ -8,6 +9,42 @@ import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 
 function StudentPlugin() {
+    const [fullDescription, setFullDescription] = useState("Učitavanje opisa...");
+    const [author, setAuthor] = useState("Ucitavanje autora...");
+    const [isExpandedDesc, setIsExpandedDesc] = useState(false);
+    const maxLength = 35;
+
+    const toggleExpand = () => {
+        setIsExpandedDesc(prev => !prev);
+    };
+
+    const isLong = fullDescription.length > maxLength;
+
+    const visibleText = !isExpandedDesc && isLong
+        ? fullDescription.substring(0, maxLength) + "..."
+        : fullDescription;
+
+    const fetchDescription = async () => {
+        try {
+            const response = await axios.get('/');
+            if (response.data.success) {
+
+                setFullDescription(response.data.data[0].description); // Bez spread operatora
+
+                setAuthor(response.data.data[0].author); // Bez spread operatora
+
+
+            }
+        } catch (error) {
+            console.error("Greška prilikom preuzimanja opisa:", error);
+        }
+    };
+
+    useEffect(() => {
+
+        fetchDescription();
+    }, []);
+
     return (
         <Container fluid className="about-section">
             <Particle/>
@@ -27,16 +64,32 @@ function StudentPlugin() {
                     </Col>
                     <Col
                         md={5}
-                        style={{paddingTop: "120px", paddingBottom: "50px"}}
+                        style={{paddingTop: "50px", paddingBottom: "50px"}}
                         className="about-img"
                     >
+                        <p className="plugin-description" style={{cursor: isLong ? 'pointer' : 'default'}}>
+                            {visibleText}
+                            {isLong && (
+                                <span
+                                    onClick={toggleExpand}
+                                    style={{
+                                        color: '#934cce',
+                                        fontWeight: 'bold',
+                                        marginLeft: '8px',
+                                        textDecoration: 'underline'
+                                    }}
+                                >
+            {isExpandedDesc ? "Prikaži manje" : "Učitaj više"}
+        </span>
+                            )}
+                        </p>
                         <img src={laptopImg} alt="about" className="img-fluid"/>
+
                     </Col>
                 </Row>
                 <h1 className="project-heading">
-                  <strong className="purple">Okruženja za koja je plugin podržan </strong>
+                    <strong className="purple">Okruženja za koja je plugin podržan </strong>
                 </h1>
-
 
 
                 <Toolstack/>

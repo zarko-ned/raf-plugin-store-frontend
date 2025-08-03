@@ -828,10 +828,8 @@ button.plugin-button:hover {
     max-width: 400px;
     color: #fff;
     margin-top: 10px;
-    text-align: left;
-    white-space: nowrap;       /* Sprečava prelamanje teksta */
-    overflow: hidden;         /* Sakriva prekoračenje */
-    text-overflow: ellipsis;  /* Dodaje ... za prekoračenje */
+    text-align: right;
+
 }
 
 .retro-table {
