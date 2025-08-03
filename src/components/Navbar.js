@@ -11,7 +11,7 @@ import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineUser, AiFillProject,
+  AiOutlineUser, AiFillProject, AiFillBug, AiOutlineBug, AiOutlineProject, AiOutlineQuestion, AiOutlineQuestionCircle,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -62,7 +62,7 @@ function NavBar() {
 
 
 
-            <NavDropdown title={<><AiFillProject style={{ marginBottom: "2px" }} /> Plugini</>} id="plugins-nav-dropdown">
+            <NavDropdown title={<><AiOutlineProject style={{ marginBottom: "2px" }} /> Plugini</>} id="plugins-nav-dropdown">
 
             <NavDropdown.Item as={Link} to="/teacherplugin" onClick={() => updateExpanded(false)}>
                 Nastavnički plugin
@@ -71,6 +71,18 @@ function NavBar() {
                 Studentski plugin
               </NavDropdown.Item>
             </NavDropdown>
+
+            <Nav.Item>
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+                <AiOutlineQuestionCircle style={{ marginBottom: "2px" }} /> Kako instalirati
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link} to="/report-bug" onClick={() => updateExpanded(false)}>
+                <AiOutlineBug style={{ marginBottom: "2px" }} /> Prijavi grešku
+              </Nav.Link>
+            </Nav.Item>
 
           </Nav>
         </Navbar.Collapse>

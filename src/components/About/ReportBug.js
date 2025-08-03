@@ -5,16 +5,16 @@ import Particle from "../Particle";
 
 import StudentPluginCard from "./StudentPluginCard";
 import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
 
-function StudentPlugin() {
+
+function ReportBug() {
   return (
     <Container fluid className="about-section">
       <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
-            md={7}
+            md={12}
             style={{
               justifyContent: "center",
               paddingTop: "30px",
@@ -22,17 +22,11 @@ function StudentPlugin() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-             Studentski plugin store je trenutno u izradi
+             Prijavite grešku
             </h1>
             <StudentPluginCard />
           </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
-          </Col>
+
         </Row>
 
 
@@ -41,4 +35,4 @@ function StudentPlugin() {
   );
 }
 
-export default StudentPlugin;
+export default ReportBug;

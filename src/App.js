@@ -16,6 +16,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TeacherPlugin from "./components/About/TeacherPlugin";
+import ReportBug from "./components/About/ReportBug";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -39,6 +40,7 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/studentplugin" element={<StudentPlugin />} />
           <Route path="/teacherplugin" element={<TeacherPlugin />} />
+          <Route path="/report-bug" element={<ReportBug />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />
