@@ -80,7 +80,7 @@ function ReportBug() {
                                             key={item.plugin_release_id}
                                             value={item.name}
                                         >
-                                            {item.name} verzija - {item.version}
+                                            {item.name}, verzija {item.version}
                                         </option>
                                     ))}
                                 </Form.Select>
@@ -102,6 +102,7 @@ function ReportBug() {
                                 <Form.Control
                                     as="textarea"
                                     name="bug_description"
+                                    placeholder="Precizan scenario greške"
                                     required
                                 />
 
