@@ -47,7 +47,7 @@ function StudentPluginCard() {
                             alert('Link kopiran!');
                         }}
                     >
-                        <span className="emoji"><FaCopy/></span> Kopiraj Plugin Repository link
+                        <span className="emoji"><FaCopy/></span> Kopiraj link za Plugin Store
                     </button>
 
                     {/* Dugme za GitHub - CORRECTED: using FaGithub instead of GitHubIcon */}
@@ -88,7 +88,7 @@ function StudentPluginCard() {
                         </td>
                         <td data-label="Preuzmi" style={{width: "150px", whiteSpace: "nowrap"}}>
                             <a
-                                href={`http://157.180.37.247/build/distributions/${plugin.name}.zip`}
+                                href={`https://rafplugins.store/build/distributions/${plugin.name}.zip`}
                                 rel="noopener noreferrer"
                             >
                                 📥 Download

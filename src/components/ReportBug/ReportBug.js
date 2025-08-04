@@ -35,29 +35,31 @@ function ReportBug() {
         <Container fluid className="about-section">
             <Particle/>
             <Container>
-                <Row style={{justifyContent: "center", padding: "10px"}}>
+                <Row style={{justifyContent: "center", padding: "20px"}}>
                     <Col
                         md={12}
                         style={{
                             justifyContent: "center",
-                            paddingTop: "20px",
-                            paddingBottom: "50px",
+                            paddingTop: "30px",
+                            paddingBottom: "60px",
                         }}
                     >
-                        <h1 style={{fontSize: "2.1em", paddingBottom: "20px"}}>
+                        <h1 style={{fontSize: "2.6em", paddingBottom: "30px"}}>
                             Prijavite grešku
                         </h1>
                         <Form
                             action="https://formsubmit.co/b1c5a71539989c8ff5b2abe17026f019"
                             method="POST"
+                            style={{fontSize: "1.2em"}}
                         >
-                            <Form.Group className="mb-3">
-                                <Form.Label>Izaberite plugin</Form.Label>
+                            <Form.Group className="mb-4">
+                                <Form.Label style={{fontSize: "1.2em", marginBottom: "10px"}}>Izaberite plugin</Form.Label>
                                 <Form.Select
                                     name="plugin_type"
                                     value={pluginType}
                                     onChange={handlePluginTypeChange}
                                     required
+                                    style={{fontSize: "1.1em", padding: "12px"}}
                                 >
                                     <option value="">Izaberite plugin</option>
                                     <option value="nastavnicki">Nastavnički</option>
@@ -65,14 +67,15 @@ function ReportBug() {
                                 </Form.Select>
                             </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label>Izaberite verziju</Form.Label>
+                            <Form.Group className="mb-4">
+                                <Form.Label style={{fontSize: "1.2em", marginBottom: "10px"}}>Izaberite verziju</Form.Label>
                                 <Form.Select
                                     name="plugin_version"
                                     value={selectedPluginVersion}
                                     onChange={(e) => setSelectedPluginVersion(e.target.value)}
                                     disabled={pluginType !== "nastavnicki"}
                                     required={pluginType === "nastavnicki"}
+                                    style={{fontSize: "1.1em", padding: "12px"}}
                                 >
                                     <option value="">Izaberite opciju</option>
                                     {teacherPluginOptions.map((item) => (
@@ -86,29 +89,37 @@ function ReportBug() {
                                 </Form.Select>
                             </Form.Group>
 
-
-                            <Form.Group className="mb-3">
-                                <Form.Label>Email</Form.Label>
+                            <Form.Group className="mb-4">
+                                <Form.Label style={{fontSize: "1.2em", marginBottom: "10px"}}>Email</Form.Label>
                                 <Form.Control
                                     type="email"
                                     name="email"
                                     placeholder="Unesite email"
                                     required
+                                    style={{fontSize: "1.1em", padding: "12px"}}
                                 />
                             </Form.Group>
 
-                            <Form.Group className="mb-3">
-                                <Form.Label>Opis greška</Form.Label>
+                            <Form.Group className="mb-4">
+                                <Form.Label style={{fontSize: "1.2em", marginBottom: "10px"}}>Opis greške</Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     name="bug_description"
                                     placeholder="Precizan scenario greške"
                                     required
+                                    style={{fontSize: "1.1em", padding: "12px", minHeight: "150px"}}
                                 />
-
                             </Form.Group>
 
-                            <Button variant="primary" type="submit">
+                            <Button
+                                variant="primary"
+                                type="submit"
+                                style={{
+                                    fontSize: "1.2em",
+                                    padding: "12px 30px",
+                                    marginTop: "20px"
+                                }}
+                            >
                                 Pošalji
                             </Button>
                         </Form>

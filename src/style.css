@@ -906,7 +906,7 @@ button.plugin-button:hover {
     font-weight: 500;
     color: #ccc;
     margin-top: 20px;
-    text-align: right;
+    text-align: center;
 }
 
 .author-name {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
-import StudentPlugin from "./components/About/StudentPlugin";
+
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import {
@@ -15,9 +15,11 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TeacherPlugin from "./components/About/TeacherPlugin";
-import ReportBug from "./components/About/ReportBug";
-import HowToInstall from "./components/About/HowToInstall";
+import TeacherPlugin from "./components/Plugins/TeacherPlugin";
+import StudentPlugin from "./components/Plugins/StudentPlugin";
+import HowToInstall from "./components/HowToInstall/HowToInstall";
+import ReportBug from "./components/ReportBug/ReportBug";
+
 
 function App() {
   const [load, upadateLoad] = useState(true);
