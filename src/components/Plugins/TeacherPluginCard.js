@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import {FaGithub, FaCopy} from 'react-icons/fa'
 
 
-function StudentPluginCard() {
+function TeacherPluginCard() {
     const [plugins, setPlugins] = useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(false);
@@ -12,7 +12,7 @@ function StudentPluginCard() {
 
     const fetchPlugins = async () => {
         try {
-            const response = await axios.get(`/teacherplugin?page=${page}`);
+            const response = await axios.get(`/releases/teacher?page=${page}`);
             if (response.data.success) {
                 setPlugins((prev) => [...prev, ...response.data.data]);
 
@@ -108,4 +108,4 @@ function StudentPluginCard() {
     );
 }
 
-export default StudentPluginCard;
+export default TeacherPluginCard;

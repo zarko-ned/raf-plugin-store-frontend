@@ -36,9 +36,25 @@ function HowToInstall() {
                                 width: "100%" // Koristimo punu dostupnu širinu
                             }}>
                                 <li style={{marginBottom: "10px"}}>
-                                    Kopirajte Plugin store{" "}
+                                    Kopirajte Plugin nastavnički store{" "}
                                     <a
                                         href="https://rafplugins.store/teacherplugin/update"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            color: "#1976d2",
+                                            textDecoration: "none",
+                                            fontWeight: "500",
+                                            borderBottom: "1px dashed #1976d2",
+                                            paddingBottom: "1px"
+                                        }}
+                                    >
+                                         link
+                                    </a>
+
+                                    ili studentski store {" "}
+                                    <a
+                                        href="https://rafplugins.store/studentplugin/update"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{
@@ -70,7 +86,7 @@ function HowToInstall() {
                                     Izaberite <strong>Manage Plugin Repositories...</strong> tab
                                 </li>
                                 <li style={{marginBottom: "10px"}}>
-                                    Kliknite na dugme<strong>➕</strong> i nalepite prethodno kopiran link
+                                    Kliknite na dugme <strong>➕</strong> i nalepite prethodno kopiran link željenog store-a
                                 </li>
                                 <li style={{marginBottom: "10px"}}>
                                     Kliknite <strong>OK</strong> da sačuvate promene

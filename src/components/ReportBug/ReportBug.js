@@ -1,35 +1,56 @@
 import React, {useEffect, useState} from "react";
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import Particle from "../Particle";
+import axios from "../../axiosInstance";
 
 function ReportBug() {
     const [pluginType, setPluginType] = useState("");
     const [teacherPluginOptions, setTeacherPluginOptions] = useState([]);
+    const [studentPluginOptions, setStudentPluginOptions] = useState([]);
     const [selectedPluginVersion, setSelectedPluginVersion] = useState("");
 
     useEffect(() => {
+        fetchPluginOptions();
+    }, [pluginType]);
+
+    const fetchPluginOptions = async () => {
         if (pluginType === "nastavnicki") {
-            fetch("https://rafplugins.store/api/v1/teacherplugin")
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.success) {
-                        setTeacherPluginOptions(data.data);
-                    }
-                });
+            const response = await axios.get('/releases/teacher');
+            if (response.data.success) {
+
+                setTeacherPluginOptions(response.data.data);
+                setStudentPluginOptions([]);
+            }
+        } else if (pluginType === "studentski") {
+            const response = await axios.get('/releases/student');
+            if (response.data.success) {
+                setStudentPluginOptions(response.data.data);
+                setTeacherPluginOptions([]);
+            }
         } else {
             setTeacherPluginOptions([]);
+            setStudentPluginOptions([]);
             setSelectedPluginVersion("");
         }
-    }, [pluginType]);
+    };
+
 
     const handlePluginTypeChange = (e) => {
         const value = e.target.value;
         setPluginType(value);
-
-        if (value === "studentski") {
-            alert("Još uvek u izradi");
-        }
+        setSelectedPluginVersion("");
     };
+
+    const getPluginOptions = () => {
+        if (pluginType === "nastavnicki") {
+            return teacherPluginOptions;
+        } else if (pluginType === "studentski") {
+            return studentPluginOptions;
+        }
+        return [];
+    };
+
+    const isPluginVersionRequired = pluginType === "nastavnicki" || pluginType === "studentski";
 
     return (
         <Container fluid className="about-section">
@@ -73,12 +94,12 @@ function ReportBug() {
                                     name="plugin_version"
                                     value={selectedPluginVersion}
                                     onChange={(e) => setSelectedPluginVersion(e.target.value)}
-                                    disabled={pluginType !== "nastavnicki"}
-                                    required={pluginType === "nastavnicki"}
+                                    disabled={!isPluginVersionRequired}
+                                    required={isPluginVersionRequired}
                                     style={{fontSize: "1.1em", padding: "12px"}}
                                 >
                                     <option value="">Izaberite opciju</option>
-                                    {teacherPluginOptions.map((item) => (
+                                    {getPluginOptions().map((item) => (
                                         <option
                                             key={item.plugin_release_id}
                                             value={item.name}

@@ -5,10 +5,10 @@ import axios from "../../axiosInstance";
 
 
 import TeacherPluginCard from "./TeacherPluginCard";
-import laptopImg from "../../Assets/about.png";
+import laptopImg from "../../Assets/about2.png";
 import Toolstack from "./Toolstack";
 
-function StudentPlugin() {
+function TeacherPlugin() {
     const [fullDescription, setFullDescription] = useState("Učitavanje opisa...");
     const [author, setAuthor] = useState("Ucitavanje autora...");
     const [isExpandedDesc, setIsExpandedDesc] = useState(false);
@@ -104,4 +104,4 @@ function StudentPlugin() {
     );
 }
 
-export default StudentPlugin;
+export default TeacherPlugin;
